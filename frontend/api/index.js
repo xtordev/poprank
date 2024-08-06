@@ -1,2 +1,2 @@
-export default import('../dist/project/server/server.mjs')
+export default import('../dist/frontend/server/server.mjs')
   .then(module => module.app());
