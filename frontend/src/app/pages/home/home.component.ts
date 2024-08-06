@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatchService } from '../../services/match.service';
 import { Student } from '../../interface/student.interface';
 import { HeaderComponent } from '../../components/header/header.component';
@@ -10,24 +10,17 @@ import { HeaderComponent } from '../../components/header/header.component';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent {
+export class HomeComponent  {
   constructor(private matchService:MatchService){}
   match:{
     student1:Student,
     student2:Student
   } | undefined
   loading:boolean=false
-  ngOnInit(): void {
-    this.refreshMatch();
+  OnInit(): void {
+    this.matchService.getMatch().subscribe((data) => {this.match = data});
   }
 
-  refreshMatch(): void {
-    this.loading = true;
-    this.matchService.getMatch().subscribe((data) => {
-      this.match = data;
-      this.loading = false;
-    });
-  }
   getMatchData(): void {
     this.matchService.getMatch().subscribe((data) => {
       this.match = data;
