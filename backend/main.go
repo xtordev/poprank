@@ -20,7 +20,9 @@ import (
 func dotenvInit() {
 	err := godotenv.Load()
 	if err != nil {
-		log.Fatal("Error loading .env file")
+		if os.Getenv("Production") != "true" {
+			log.Fatal("Error loading .env file")
+		}
 	} else {
 		fmt.Println("DotEnv initialized")
 	}
