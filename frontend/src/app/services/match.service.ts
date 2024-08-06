@@ -13,7 +13,7 @@ export class MatchService {
     return this.http.get<{
       student1:Student,
       student2:Student
-    }>(`${import.meta.env.NG_APP_BACKEND_URL}/matches/`,{responseType:'json'})
+    }>(`${import.meta.env.NG_APP_BACKEND_URL}/matches`,{responseType:'json'})
   }
 
   matchWin(student1:number,student2:number,matchWinner:number){

@@ -10,14 +10,14 @@ import { HeaderComponent } from '../../components/header/header.component';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent  {
+export class HomeComponent implements OnInit {
   constructor(private matchService:MatchService){}
   match:{
     student1:Student,
     student2:Student
   } | undefined
   loading:boolean=false
-  OnInit(): void {
+  ngOnInit(): void {
     this.matchService.getMatch().subscribe((data) => {this.match = data});
   }
 
