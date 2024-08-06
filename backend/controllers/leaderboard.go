@@ -72,7 +72,7 @@ func standingLeaderboard(c *gin.Context) {
 func LeaderboardRoutes(r *gin.Engine) {
 	routes := r.Group("/leaderboard")
 	{
-		routes.GET("/", allLeaderboard)
+		routes.GET("", allLeaderboard)
 		routes.POST("/standing", standingLeaderboard)
 	}
 }

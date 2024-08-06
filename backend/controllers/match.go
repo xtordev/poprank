@@ -94,7 +94,7 @@ func matchWin(c *gin.Context) {
 func MatchRoutes(r *gin.Engine) {
 	routes := r.Group("/matches")
 	{
-		routes.GET("/", genMatch)
+		routes.GET("", genMatch)
 		routes.POST("/win", matchWin)
 	}
 }

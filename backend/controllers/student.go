@@ -107,7 +107,7 @@ func delete(c *gin.Context) {
 func StudentsRoutes(r *gin.Engine) {
 	routes := r.Group("/students")
 	{
-		routes.GET("/", isProduction, findAll)
+		routes.GET("", isProduction, findAll)
 		routes.GET("/:id", isProduction, findOne)
 		routes.POST("/", isProduction, create)
 		routes.PUT("/:id", isProduction, update)
