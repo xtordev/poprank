@@ -20,7 +20,7 @@ func findAll(c *gin.Context) {
 
 	var students []db.Student
 	db.GormDB.Find(&students)
-	c.JSON(http.StatusOK, gin.H{"students": students})
+	c.JSON(http.StatusOK, students)
 }
 func findOne(c *gin.Context) {
 	var student db.Student
@@ -30,7 +30,7 @@ func findOne(c *gin.Context) {
 		c.JSON(http.StatusNotFound, gin.H{"error": "Student not found"})
 		return
 	}
-	c.JSON(http.StatusOK, gin.H{"student": student})
+	c.JSON(http.StatusOK, student)
 }
 func create(c *gin.Context) {
 	var student db.Student

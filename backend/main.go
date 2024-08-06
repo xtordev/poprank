@@ -5,6 +5,7 @@ import (
 	"log"
 	"os"
 
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
 
@@ -61,6 +62,7 @@ func main() {
 	InitSupabase()
 	InitDatabase()
 	r := gin.Default()
+	r.Use(cors.Default())
 	router.InitRoutes(r)
 	r.Run() // listen and serve on 0.0.0.0:8080
 }

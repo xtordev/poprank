@@ -19,4 +19,5 @@ func InitRoutes(r *gin.Engine) {
 		})
 	}
 	controllers.StudentsRoutes(r)
+	controllers.MatchRoutes(r)
 }
