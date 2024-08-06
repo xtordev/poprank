@@ -20,7 +20,7 @@ import (
 func dotenvInit() {
 	err := godotenv.Load()
 	if err != nil {
-		if os.Getenv("Production") != "true" {
+		if os.Getenv("PRODUCTION") != "true" {
 			log.Fatal("Error loading .env file")
 		}
 	} else {
