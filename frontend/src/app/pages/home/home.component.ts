@@ -18,7 +18,15 @@ export class HomeComponent {
   } | undefined
   loading:boolean=false
   ngOnInit(): void {
-    this.matchService.getMatch().subscribe((data) => {this.match = data});
+    this.refreshMatch();
+  }
+
+  refreshMatch(): void {
+    this.loading = true;
+    this.matchService.getMatch().subscribe((data) => {
+      this.match = data;
+      this.loading = false;
+    });
   }
   getMatchData(): void {
     this.matchService.getMatch().subscribe((data) => {
