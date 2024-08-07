@@ -10,8 +10,7 @@
   ],
   "functions": {
     "api/index.js": {
-      "includeFiles":
-    "dist/frontend/**"
+      "includeFiles": "dist/frontend/**/*!(index.html)"
     }
   }
 }
