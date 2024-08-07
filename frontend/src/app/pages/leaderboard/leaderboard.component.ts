@@ -16,6 +16,6 @@ export class LeaderboardComponent implements OnInit{
   leaderboard:Student[]|undefined
 
   ngOnInit(): void {
-     this.leaderboardService.getLeaderboard().subscribe((data) => {this.leaderboard = data;console.log(this.leaderboard)});
+     this.leaderboardService.getLeaderboard().subscribe((data) => {this.leaderboard = data});
   }
 }
