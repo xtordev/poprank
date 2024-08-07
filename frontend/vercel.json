@@ -10,8 +10,10 @@
   ],
   "functions": {
     "api/index.js": {
-      "excludeFiles":"dist/frontend/browser/**.html",
-      "includeFiles": "dist/frontend/**"
+      "includeFiles": [
+      "dist/frontend/**",
+      "dist/frontend/browser/**.css"
+]
     }
   }
 }
