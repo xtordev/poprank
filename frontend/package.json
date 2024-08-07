@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "clean:html": "rimraf dist/frontend/browser/*.html &&  rimraf dist/frontend/browser/**/*.html  && ls dist/frontend/browser",
+    "clean:html": "rimraf dist/frontend/browser/*.html && rimraf dist/frontend/browser/**/*.html",
     "build": "npm run clean:html && ng build && npm run clean:html",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
