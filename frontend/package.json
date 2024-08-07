@@ -4,7 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "clean:html": "rimraf ./dist/frontend/browser/**/*.html",
+    "build": "ng build && npm run clean:html",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:frontend": "node dist/frontend/server/server.mjs"
@@ -42,6 +43,7 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "postcss": "^8.4.40",
+    "rimraf": "^6.0.1",
     "tailwindcss": "^3.4.7",
     "typescript": "~5.5.2"
   }

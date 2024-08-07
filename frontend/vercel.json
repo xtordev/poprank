@@ -11,7 +11,7 @@
   "functions": {
     "api/index.js": {
       "includeFiles":
-    "dist/frontend/**;dist/frontend/browser/**.css"
+    "dist/frontend/**"
     }
   }
 }
