@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "clean:html": "rimraf ./dist/frontend/browser/**/*.html",
-    "build": "ng build && npm run clean:html",
+    "build": "npm run clean:html && ng build && npm run clean:html",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:frontend": "node dist/frontend/server/server.mjs"
