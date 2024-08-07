@@ -36,6 +36,7 @@ export class SearchComponent {
     .subscribe(
       (data) => this.studentInfo = data,
       (error) =>{this.error = true;
+        this.studentInfo = undefined
         if (error.status == 400) {
           this.errMsg = "Invalid Student Code"
         }

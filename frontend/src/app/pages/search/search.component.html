@@ -5,16 +5,38 @@
       <label for="simple-search" class="sr-only">Search</label>
       <div class="relative w-full">
           <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-              <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+              <svg class="w-5 h-5 text-gray-500 " fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
           </div>
-          <input formControlName="Code" type="text" id="simple-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search: 000-00001" required>
+          <input formControlName="Code" type="text" id="simple-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  " placeholder="Search: 000-00001" required>
       </div>
-      <button type="submit" class="p-2.5 ml-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></button>
+      <button type="submit" class="p-2.5 ml-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 "><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></button>
   </form>
 
   <section class="flex flex-col items-center mt-12">
     @if (this.error) {
       <p>{{this.errMsg}}</p>
+    }
+    @if (this.studentInfo) {
+
+<section class="bg-white ">
+  <div class="container px-6 py-10 mx-auto">
+      <h1 class="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl ">Student Popularity Info</h1>
+      <div class="mt-4">
+
+          <div class="flex flex-col items-center p-8 transition-colors duration-300 transform border cursor-pointer rounded-xl group ">
+              <img class="object-cover w-32 h-32 rounded-xl ring-4 ring-gray-300" [src]="studentInfo.student.Image" alt="">
+
+              <h1 class="mt-4 text-2xl font-semibold text-gray-700 capitalize ">{{this.studentInfo!.student.Code}}</h1>
+
+              <p class="mt-2 text-gray-500 capitalize ">Ranking: {{this.studentInfo.ranking}}</p>
+              <p class="mt-2 text-gray-500 capitalize ">Percentile: {{this.studentInfo.percentile.toFixed(2)}}%</p>
+              <p class="mt-4 text-center">You are more popular than {{this.studentInfo.percentile.toFixed(2)}}% of students</p>
+          </div>
+      </div>
+  </div>
+</section>
+
+
     }
   </section>
   </section>
