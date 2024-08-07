@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HeaderComponent } from "../../components/header/header.component";
 import { Student } from '../../interface/student.interface';
 import { HttpClient } from '@angular/common/http';
+import { LeaderboardService } from '../../services/leaderboard.service';
 
 @Component({
   selector: 'app-leaderboard',
@@ -11,11 +12,10 @@ import { HttpClient } from '@angular/common/http';
   styleUrl: './leaderboard.component.css'
 })
 export class LeaderboardComponent implements OnInit{
-  constructor(private http:HttpClient) { }
+  constructor(private leaderboardService:LeaderboardService) { }
   leaderboard:Student[]|undefined
 
   ngOnInit(): void {
-      this.http.get<Student[]>(`${import.meta.env.NG_APP_BACKEND_URL}/leaderboard`)
-     .subscribe((data) => {this.leaderboard = data});
+     this.leaderboardService.getLeaderboard().subscribe((data) => {this.leaderboard = data;console.log(this.leaderboard)});
   }
 }
