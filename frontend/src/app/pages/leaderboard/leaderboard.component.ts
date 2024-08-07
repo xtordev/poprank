@@ -16,6 +16,6 @@ export class LeaderboardComponent implements OnInit{
 
   ngOnInit(): void {
       this.http.get<Student[]>(`${import.meta.env.NG_APP_BACKEND_URL}/leaderboard`)
-     .subscribe(data => this.leaderboard = data);
+     .subscribe((data) => {this.leaderboard = data});
   }
 }
