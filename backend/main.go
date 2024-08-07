@@ -64,7 +64,9 @@ func main() {
 	InitSupabase()
 	InitDatabase()
 	r := gin.Default()
-	r.Use(cors.Default())
+	config := cors.DefaultConfig()
+	config.AllowAllOrigins = true
+	r.Use(cors.New(config))
 	router.InitRoutes(r)
 	r.Run() // listen and serve on 0.0.0.0:8080
 }
