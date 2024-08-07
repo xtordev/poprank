@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "clean:html": "rimraf /vercel/path0/frontend/dist/frontend",
+    "clean:html": "rimraf /vercel/path0/frontend/dist/frontend/browser/**/*.html",
     "build": "npm run clean:html && ng build && npm run clean:html",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
